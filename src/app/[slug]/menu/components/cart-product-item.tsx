@@ -1,3 +1,4 @@
+
 import { ChevronLeftIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import { useContext } from "react";
@@ -5,14 +6,15 @@ import { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { formatCurrency } from "@/helpers/format-currency";
 
+import { CartContext, CartProduct } from "../context/cart";
+
 interface CartItemProps {
   product: CartProduct;
 }
 
 const CartProductItem = ({ product }: CartItemProps) => {
-     {/* const { decreaseProductQuantity, increaseProductQuantity, removeProduct } =
-    useContext(CartContext); */}
-  
+  const { decreaseProductQuantity, increaseProductQuantity, removeProduct } =
+    useContext(CartContext);
   return (
     <div className="flex items-center justify-between">
       {/* ESQUERDA */}
