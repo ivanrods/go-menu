@@ -4,7 +4,7 @@ GoMenu é uma aplicação fullstack que simula um restaurante virtual, onde os u
 
 ## 🎨 Demonstração  
 
-![donalds](https://github.com/user-attachments/assets/f2111dd0-0a3f-425b-9daa-a90de9e47af1)
+![go-menu](https://github.com/user-attachments/assets/cec154ee-c4fd-4479-850c-34b60d3fcd0c)
 
 
 ## 🚀 Funcionalidades  
@@ -16,7 +16,7 @@ GoMenu é uma aplicação fullstack que simula um restaurante virtual, onde os u
 
 ## 🔗 Acesse o projeto  
 
-[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://donalds-nine.vercel.app/)  
+[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://go-menu-web.vercel.app)  
 
 ## 🛠️ Tecnologias Utilizadas  
 
