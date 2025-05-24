@@ -1,6 +1,6 @@
-# 🍔 Donalds - Restaurante Virtual  
+# 🍔 GoMenu - Restaurante Virtual  
 
-Donalds é uma aplicação fullstack que simula um restaurante virtual, onde os usuários podem explorar o cardápio, escolher produtos e adicioná-los à sacola para finalizar a compra.  
+GoMenu é uma aplicação fullstack que simula um restaurante virtual, onde os usuários podem explorar o cardápio, escolher produtos e adicioná-los à sacola para finalizar a compra.  
 
 ## 🎨 Demonstração  
 
@@ -16,7 +16,7 @@ Donalds é uma aplicação fullstack que simula um restaurante virtual, onde os 
 
 ## 🔗 Acesse o projeto  
 
-[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://donalds-nine.vercel.app/fsw-donalds)  
+[![Ver Demo](https://img.shields.io/badge/Demo-Ao%20vivo-blue?style=for-the-badge&logo=vercel)](https://donalds-nine.vercel.app/)  
 
 ## 🛠️ Tecnologias Utilizadas  
 
