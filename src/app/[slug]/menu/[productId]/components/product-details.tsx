@@ -48,8 +48,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
   return (
     <>
-      <div className="relative z-50 mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded-t-3xl p-5">
-        <div className="flex-auto overflow-hidden">
+      <div className="relative z-50 mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded-t-3xl p-5 ">
+        <div className="flex-auto overflow-hidden ">
           {/* RESTAURANTE */}
           <div className="flex items-center gap-1.5">
             <Image
@@ -68,7 +68,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           <h2 className="mt-1 text-xl font-semibold">{product.name}</h2>
 
           {/* PREÇO E QUANTIDADE */}
-          <div className="mt-3 flex items-center justify-between">
+          <div className="mt-3 flex items-center justify-between md:flex-col md:items-start gap-4">
             <h3 className="text-xl font-semibold">
               {formatCurrency(product.price)}
             </h3>
@@ -115,7 +115,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </ScrollArea>
         </div>
 
-        <Button className="w-full rounded-full" onClick={handleAddToCart}>
+        <Button className="w-full rounded-full mt-4" onClick={handleAddToCart}>
           Adicionar à sacola
         </Button>
       </div>

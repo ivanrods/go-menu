@@ -39,7 +39,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
     return selectedCategory.id === category.id ? "default" : "secondary";
   };
   return (
-    <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white">
+    <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white lg:px-10">
       <div className="p-5">
         <div className="flex items-center gap-3">
           <Image
@@ -77,7 +77,10 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
       </ScrollArea>
 
       <h3 className="px-5 pt-2 font-semibold">{selectedCategory.name}</h3>
-      <Products products={selectedCategory.products} />
+    
+         <Products products={selectedCategory.products} />
+   
+     
       {products.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 flex w-full items-center justify-between border-t bg-white px-5 py-3">
           <div>

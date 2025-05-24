@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**", // Permite qualquer caminho
       },
+      {
+        protocol: "https",
+        hostname: "cdn.pixabay.com",
+        pathname: "/**", // Permite qualquer caminho
+      },
     ],
   },
 };

@@ -17,11 +17,11 @@ const ProductHeader = ({ product }: ProductHeaderProps) => {
   const handleBackClick = () => router.back();
   const handleOrdersClick = () => router.push(`/${slug}/orders`);
   return (
-    <div className="relative min-h-[300px] w-full">
+    <div className="relative min-h-[300px] w-full ">
       <Button
         variant="secondary"
         size="icon"
-        className="absolute left-4 top-4 z-50 rounded-full"
+        className="absolute left-4 top-4 z-50 rounded-full md:fixed"
         onClick={handleBackClick}
       >
         <ChevronLeftIcon />
@@ -37,7 +37,7 @@ const ProductHeader = ({ product }: ProductHeaderProps) => {
       <Button
         variant="secondary"
         size="icon"
-        className="absolute right-4 top-4 z-50 rounded-full"
+        className="absolute right-4 top-4 z-50 rounded-full md:fixed"
         onClick={handleOrdersClick}
       >
         <ScrollTextIcon />

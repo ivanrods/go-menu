@@ -14,12 +14,12 @@ const Products = ({ products }: ProductsProps) => {
   const searchParams = useSearchParams();
   const consumptionMethod = searchParams.get("consumptionMethod");
   return (
-    <div className="space-y-3 px-5">
+    <div className="space-y-3 px-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center md:space-y-0">
       {products.map((product) => (
         <Link
           key={product.id}
           href={`/${slug}/menu/${product.id}?consumptionMethod=${consumptionMethod}`}
-          className="flex items-center justify-between gap-10 border-b py-3"
+          className="flex items-center justify-between gap-10 md:gap-2 border-b py-3 md:flex-col-reverse "
         >
           {/* ESQUERDA */}
           <div>
@@ -33,12 +33,13 @@ const Products = ({ products }: ProductsProps) => {
           </div>
 
           {/* DIREITA */}
-          <div className="relative min-h-[82px] min-w-[120px]">
+          <div className="relative min-h-[82px] min-w-[120px] md:bg-gray-100 md:w-full md:min-h-72">
             <Image
               src={product.imageUrl}
               alt={product.name}
               fill
-              className="rounded-lg object-contain"
+             
+              className="rounded-lg object-contain "
             />
           </div>
         </Link>
