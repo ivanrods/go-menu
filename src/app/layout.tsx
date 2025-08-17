@@ -15,6 +15,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "GoMenu",
   description: "Bora finalizar esse projeto lindo!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         <CartProvider>{children}</CartProvider>
 
-        <Toaster/>
+        <Toaster />
       </body>
     </html>
   );

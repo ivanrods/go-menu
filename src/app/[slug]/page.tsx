@@ -24,6 +24,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
           alt={restaurant.name}
           width={82}
           height={82}
+          className="rounded-lg"
         />
         <h2 className="font-semibold">{restaurant.name}</h2>
       </div>

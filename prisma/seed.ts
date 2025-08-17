@@ -9,13 +9,11 @@ const main = async () => {
     await tx.restaurant.deleteMany();
     const restaurant = await tx.restaurant.create({
       data: {
-        name: "FSW Donalds",
-        slug: "fsw-donalds",
+        name: "GoMenu",
+        slug: "go-menu",
         description: "O melhor fast food do mundo",
-        avatarImageUrl:
-          "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQvcNP9rHlEJu1vCY5kLqzjf29HKaeN78Z6pRy",
-        coverImageUrl:
-          "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQac8bHYlkBUjlHSKiuseLm2hIFzVY0OtxEPnw",
+        avatarImageUrl: "https://i.ibb.co/nMLS4mz9/logo-go-menu.png",
+        coverImageUrl: "https://i.ibb.co/4nkdxRWQ/go-menu-cover.jpg",
       },
     });
     const combosCategory = await tx.menuCategory.create({
@@ -24,209 +22,283 @@ const main = async () => {
         restaurantId: restaurant.id,
       },
     });
+
     await tx.product.createMany({
       data: [
         {
-          name: "McOferta Média Big Mac Duplo",
+          name: "Combo GoBurger Clássico",
           description:
-            "Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida.",
-          price: 39.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQaHB8tslkBUjlHSKiuseLm2hIFzVY0OtxEPnw",
+            "Hambúrguer bovino suculento com queijo, alface fresca e molho especial. Acompanha batata frita média e refrigerante.",
+          price: 29.9,
+          imageUrl: "https://i.ibb.co/LmYYpjj/Combo-Go-Burger-Cl-ssico.png",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão com gergilim",
-            "Hambúrguer de carne 100% bovina",
+            "Pão com gergelim",
+            "Hambúrguer 100% bovino",
+            "Queijo prato",
             "Alface americana",
-            "Queijo fatiado sabor cheddar",
-            "Molho especial",
-            "Cebola",
-            "Picles",
+            "Tomate fatiado",
+            "Molho especial GoMenu",
+            "Batata frita média",
+            "Refrigerante lata",
           ],
         },
         {
-          name: "Novo Brabo Melt Onion Rings",
+          name: "Combo GoBacon Duplo",
           description:
-            "Dois hambúrgueres de carne 100% bovina, méquinese, a exclusiva maionese especial com sabor de carne defumada, onion rings, fatias de bacon, queijo processado sabor cheddar, o delicioso molho lácteo com queijo tipo cheddar tudo isso no pão tipo brioche trazendo uma explosão de sabores pros seus dias de glória! Acompanhamento e Bebida.",
-          price: 41.5,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQeGQofnEPyQaHEV2WL8rGUs41oMICtYfNkphl",
+            "Dois hambúrgueres de carne, queijo cheddar, fatias crocantes de bacon e molho barbecue. Acompanha onion rings e refrigerante.",
+          price: 36.9,
+          imageUrl: "https://i.ibb.co/bjN1LND4/Combo-Go-Bacon-Duplo.png",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Hambúrguer de carne 100% bovina",
-            "Méquinese",
-            "Maionese especial com sabor de carne defumada",
+            "Pão brioche",
+            "2 hambúrgueres bovinos",
+            "Queijo cheddar",
+            "Bacon crocante",
+            "Molho barbecue",
             "Onion rings",
-            "Fatias de bacon",
-            "Queijo processado sabor cheddar",
-            "Molho lácteo com queijo tipo cheddar",
+            "Refrigerante lata",
           ],
         },
         {
-          name: "McCrispy Chicken Elite",
+          name: "Combo GoChicken Crispy",
           description:
-            "Composto por pão tipo brioche com batata, molho Honey&Fire, bacon em fatias, alface, tomate, queijo sabor cheddar e carne 100% de peito de frango, temperada e empanada, acompanhamento e bebida.",
-          price: 39.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQr12aTqPo3SsGjBJCaM7yhxnbDlXeL5N9dckv",
+            "Frango empanado crocante, alface, queijo suave e maionese temperada. Acompanha batata frita e suco natural.",
+          price: 31.9,
+          imageUrl: "https://i.ibb.co/C3rWQtCf/Combo-Go-Chicken-Crispy.png",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Batata",
-            "Molho Honey&Fire",
-            "Bacon em fatias",
+            "Pão com gergelim",
+            "Filé de frango empanado",
+            "Queijo muçarela",
+            "Alface americana",
+            "Maionese temperada",
+            "Batata frita média",
+            "Suco natural 300ml",
+          ],
+        },
+        {
+          name: "Combo GoVeggie",
+          description:
+            "Hambúrguer 100% vegetal, queijo vegano, legumes frescos e molho leve. Acompanha batata rústica e chá gelado.",
+          price: 33.9,
+          imageUrl: "https://i.ibb.co/HLnCrbfK/Combo-Go-Veggie.png",
+          menuCategoryId: combosCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Pão integral",
+            "Hambúrguer vegetal (grão de bico, ervilha e soja)",
+            "Queijo vegano",
             "Alface",
             "Tomate",
-            "Queijo sabor cheddar",
-            "Carne 100% de peito de frango",
+            "Molho de ervas",
+            "Batata rústica",
+            "Chá gelado 300ml",
           ],
         },
         {
-          name: "Duplo Cheddar McMelt",
+          name: "Combo GoCheese Triplo",
           description:
-            "Dois hambúrgueres (100% carne bovina), molho lácteo com queijo tipo cheddar, cebola ao molho shoyu e pão escuro com gergelim, acompanhamento e bebida.",
-          price: 36.2,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQWdq0w8niS9XCLQu7Nb4jvBYZze16goaOqsKR",
+            "Três hambúrgueres bovinos com camadas generosas de cheddar derretido e molho cremoso de queijo. Acompanha batata frita grande e milkshake.",
+          price: 39.9,
+          imageUrl: "https://i.ibb.co/jvbf4RPw/Combo-Go-Cheese-Triplo.png",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
-            "Pão escuro com gergelim",
-            "Hambúrguer de carne 100% bovina",
-            "Molho lácteo com queijo tipo cheddar",
-            "Cebola ao molho shoyu",
+            "Pão com gergelim",
+            "3 hambúrgueres bovinos",
+            "3 fatias de queijo cheddar",
+            "Molho cremoso de queijo",
+            "Batata frita grande",
+            "Milkshake 400ml",
           ],
         },
       ],
     });
+
     const hamburguersCategory = await tx.menuCategory.create({
       data: {
         name: "Lanches",
         restaurantId: restaurant.id,
       },
     });
+
     await tx.product.createMany({
       data: [
         {
-          name: "Big Mac",
+          name: "GoBurger Clássico",
           description:
-            "Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida.",
+            "Hambúrguer bovino suculento com queijo, alface fresca e molho especial. Acompanha batata frita média e refrigerante.",
+          price: 29.9,
+          imageUrl: "https://i.ibb.co/3mB4hK0D/Combo-Go-Burger-Cl-ssico.png",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
           ingredients: [
-            "Pão com gergilim",
-            "Hambúrguer de carne 100% bovina",
+            "Pão com gergelim",
+            "Hambúrguer 100% bovino",
+            "Queijo prato",
             "Alface americana",
-            "Queijo fatiado sabor cheddar",
-            "Molho especial",
-            "Cebola",
-            "Picles",
+            "Tomate fatiado",
+            "Molho especial GoMenu",
+            "Batata frita média",
+            "Refrigerante lata",
           ],
-          price: 39.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQKfI6fivqActTvBGLXfQe4a8CJ6d3HiR7USPK",
-          menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
         },
         {
-          name: "Duplo Quarterão",
+          name: "GoCheese Bacon",
           description:
-            "Dois hambúrgueres de carne 100% bovina, méquinese, a exclusiva maionese especial com sabor de carne defumada, onion rings, fatias de bacon, queijo processado sabor cheddar, o delicioso molho lácteo com queijo tipo cheddar tudo isso no pão tipo brioche trazendo uma explosão de sabores pros seus dias de glória! Acompanhamento e Bebida.",
+            "Hambúrguer suculento com queijo cheddar, bacon crocante e molho barbecue. Acompanha onion rings e refrigerante.",
+          price: 34.9,
+          imageUrl: "https://i.ibb.co/QvV8QT0m/Combo-Go-Cheese-Bacon.png",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Hambúrguer de carne 100% bovina",
-            "Méquinese",
-            "Maionese especial com sabor de carne defumada",
+            "Pão brioche",
+            "Hambúrguer 100% bovino",
+            "Queijo cheddar",
+            "Bacon crocante",
+            "Molho barbecue",
+            "Alface americana",
             "Onion rings",
-            "Fatias de bacon",
-            "Queijo processado sabor cheddar",
-            "Molho lácteo com queijo tipo cheddar",
+            "Refrigerante lata",
           ],
-          price: 41.5,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ99rtECuYaDgmA4VujBU0wKn2ThXJvF3LHfyc",
-          menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
         },
         {
-          name: "McMelt",
+          name: "GoVeggie",
           description:
-            "Composto por pão tipo brioche com batata, molho Honey&Fire, bacon em fatias, alface, tomate, queijo sabor cheddar e carne 100% de peito de frango, temperada e empanada, acompanhamento e bebida.",
+            "Delicioso hambúrguer vegetal com queijo vegano, alface, tomate e molho especial. Acompanha batata doce frita e suco natural.",
+          price: 31.5,
+          imageUrl: "https://i.ibb.co/8DSsVqzB/Combo-Go-Veggie.png",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
           ingredients: [
-            "Pão tipo brioche",
-            "Batata",
-            "Molho Honey&Fire",
-            "Bacon em fatias",
-            "Alface",
-            "Tomate",
-            "Queijo sabor cheddar",
-            "Carne 100% de peito de frango",
+            "Pão integral",
+            "Hambúrguer vegetal",
+            "Queijo vegano",
+            "Alface americana",
+            "Tomate fatiado",
+            "Molho especial GoMenu",
+            "Batata doce frita",
+            "Suco natural",
           ],
+        },
+        {
+          name: "GoChicken Crispy",
+          description:
+            "Peito de frango empanado e crocante com queijo, alface e maionese temperada. Acompanha batata frita e refrigerante.",
+          price: 28.9,
+          imageUrl: "https://i.ibb.co/CKQzhKTV/Combo-Go-Chicken-Crispy.png",
+          menuCategoryId: hamburguersCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Pão com gergelim",
+            "Peito de frango empanado",
+            "Queijo prato",
+            "Alface americana",
+            "Molho maionese temperada",
+            "Batata frita média",
+            "Refrigerante lata",
+          ],
+        },
+        {
+          name: "GoDouble Burger",
+          description:
+            "Dois hambúrgueres bovinos suculentos com queijo, cebola caramelizada e molho especial. Acompanha batata frita grande e refrigerante.",
           price: 39.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQUY0VlDTmvPeJLoyOjzNsMqFdxUI423nBl6br",
+          imageUrl: "https://i.ibb.co/bjN1LND4/Combo-Go-Bacon-Duplo.png",
           menuCategoryId: hamburguersCategory.id,
           restaurantId: restaurant.id,
-        },
-        {
-          name: "McNífico Bacon",
-          description:
-            "Dois hambúrgueres (100% carne bovina), molho lácteo com queijo tipo cheddar, cebola ao molho shoyu e pão escuro com gergelim, acompanhamento e bebida.",
           ingredients: [
-            "Pão escuro com gergelim",
-            "Hambúrguer de carne 100% bovina",
-            "Molho lácteo com queijo tipo cheddar",
-            "Cebola ao molho shoyu",
+            "Pão com gergelim",
+            "Dois hambúrgueres 100% bovino",
+            "Queijo prato",
+            "Cebola caramelizada",
+            "Molho especial GoMenu",
+            "Alface americana",
+            "Batata frita grande",
+            "Refrigerante lata",
           ],
-          price: 36.2,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBBmifbjzEVXRoycAtrP9vH45bZ6WDl3QF0a1",
-          menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
         },
       ],
     });
+
     const frenchFriesCategory = await tx.menuCategory.create({
       data: {
         name: "Fritas",
         restaurantId: restaurant.id,
       },
     });
+
     await tx.product.createMany({
       data: [
         {
-          name: "Fritas Grande",
-          description: "Batatas fritas crocantes e sequinhas. Vem bastante!",
-          ingredients: [],
-          price: 10.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQNd3jSNrcJroaszwjUAlM6iSO5ZTx2HV70t31",
+          name: "Fritas Tradicionais",
+          description:
+            "Clássicas batatas fritas crocantes, servidas com ketchup.",
+          price: 12.9,
+          imageUrl: "https://i.ibb.co/LDP2P74z/Fritas-Tradicionais.jpg",
           menuCategoryId: frenchFriesCategory.id,
           restaurantId: restaurant.id,
+          ingredients: ["Batata", "Óleo vegetal", "Sal"],
         },
         {
-          name: "Fritas Média",
+          name: "Fritas Onion Rings",
           description:
-            "Batatas fritas crocantes e sequinhas. Vem uma média quantidade!",
-          ingredients: [],
-          price: 9.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7Y6lv9tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+            "Anéis de cebola empanados e crocantes, servidos com molho especial.",
+          price: 15.5,
+          imageUrl: "https://i.ibb.co/DPtCHPyQ/Fritas-Onion-Rings.png",
           menuCategoryId: frenchFriesCategory.id,
           restaurantId: restaurant.id,
+          ingredients: [
+            "Cebola",
+            "Farinha de trigo",
+            "Óleo vegetal",
+            "Molho especial GoMenu",
+          ],
         },
         {
-          name: "Fritas Pequena",
+          name: "Fritas Cheddar Bacon",
           description:
-            "Batatas fritas crocantes e sequinhas. Vem pouquinho (é bom pra sua dieta)!",
-          ingredients: [],
-          price: 5.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
+            "Batatas fritas cobertas com queijo cheddar derretido e pedacinhos de bacon crocante.",
+          price: 18.9,
+          imageUrl: "https://i.ibb.co/hFZknjJZ/Fritas-Cheddar-Bacon.png",
           menuCategoryId: frenchFriesCategory.id,
           restaurantId: restaurant.id,
+          ingredients: ["Batata", "Queijo cheddar", "Bacon crocante", "Sal"],
+        },
+        {
+          name: "Fritas Sweet Potato",
+          description:
+            "Batata doce frita crocante, servida com molho de mel e mostarda.",
+          price: 16.5,
+          imageUrl: "https://i.ibb.co/j9rn68pB/Fritas-Sweet-Potato.png",
+          menuCategoryId: frenchFriesCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Batata doce",
+            "Óleo vegetal",
+            "Sal",
+            "Molho mel e mostarda",
+          ],
+        },
+        {
+          name: "Fritas GoMenu Supreme",
+          description:
+            "Batatas fritas cobertas com queijo, bacon, cebola caramelizada e molho especial.",
+          price: 21.9,
+          imageUrl: "https://i.ibb.co/qMWYr9d7/Fritas-Go-Menu-Supreme.jpg",
+          menuCategoryId: frenchFriesCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Batata",
+            "Queijo prato",
+            "Bacon crocante",
+            "Cebola caramelizada",
+            "Molho especial GoMenu",
+          ],
         },
       ],
     });
@@ -243,8 +315,7 @@ const main = async () => {
           description: "Coca-cola gelada para acompanhar seu lanche.",
           ingredients: [],
           price: 5.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQJS1b33q29eEsh0CVmOywrqx1UPnJpRGcHN5v",
+          imageUrl: "https://i.ibb.co/PGx6817K/Coca-cola.png",
           menuCategoryId: drinksCategory.id,
           restaurantId: restaurant.id,
         },
@@ -253,8 +324,7 @@ const main = async () => {
           description: "Fanta Laranja gelada para acompanhar seu lanche.",
           ingredients: [],
           price: 5.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQW7Kxm9gniS9XCLQu7Nb4jvBYZze16goaOqsK",
+          imageUrl: "https://i.ibb.co/4wf6wrVH/fanta.png",
           menuCategoryId: drinksCategory.id,
           restaurantId: restaurant.id,
         },
@@ -263,13 +333,32 @@ const main = async () => {
           description: "A bebida favorita do Cristiano Ronaldo.",
           ingredients: [],
           price: 2.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
+          imageUrl: "https://i.ibb.co/cSfqnHrC/agua.png",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Suco de Laranja",
+          description: "Suco de laranja natural, fresco e geladinho.",
+          ingredients: ["Laranja"],
+          price: 6.5,
+          imageUrl: "https://i.ibb.co/XxYxPGbq/Suco-de-Laranja.png",
+          menuCategoryId: drinksCategory.id,
+          restaurantId: restaurant.id,
+        },
+        {
+          name: "Chá Gelado",
+          description:
+            "Chá gelado sabor limão, refrescante e perfeito para acompanhar seu lanche.",
+          ingredients: ["Chá", "Limão", "Açúcar"],
+          price: 5.5,
+          imageUrl: "https://i.ibb.co/8LwdLVxq/cha.png",
           menuCategoryId: drinksCategory.id,
           restaurantId: restaurant.id,
         },
       ],
     });
+
     const desertsCategory = await tx.menuCategory.create({
       data: {
         name: "Sobremesas",
@@ -279,34 +368,86 @@ const main = async () => {
     await tx.product.createMany({
       data: [
         {
-          name: "Casquinha de Baunilha",
-          description: "Casquinha de sorvete sabor baunilha.",
-          ingredients: [],
-          price: 3.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQtfuQrAKkI75oJfPT0crZxvX82ui9qV3hLFdY",
+          name: "Milkshake Chocolate",
+          description:
+            "Delicioso milkshake cremoso de chocolate, coberto com chantilly e calda de chocolate.",
+          price: 14.9,
+          imageUrl: "https://i.ibb.co/jkbZJm9S/Milkshake-Chocolate.png",
           menuCategoryId: desertsCategory.id,
           restaurantId: restaurant.id,
+          ingredients: [
+            "Leite",
+            "Sorvete de chocolate",
+            "Chantilly",
+            "Calda de chocolate",
+            "Chocolate granulado",
+          ],
         },
         {
-          name: "Casquinha de Chocolate",
-          description: "Casquinha de sorvete sabor chocolate.",
-          ingredients: [],
-          price: 3.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBH21ijzEVXRoycAtrP9vH45bZ6WDl3QF0a1M",
+          name: "Brownie com Sorvete",
+          description:
+            "Brownie quentinho servido com uma bola de sorvete de creme e calda de chocolate.",
+          price: 19.5,
+          imageUrl: "https://i.ibb.co/WWD5pQsP/Brownie-com-Sorvete.png",
           menuCategoryId: desertsCategory.id,
           restaurantId: restaurant.id,
+          ingredients: [
+            "Chocolate meio amargo",
+            "Manteiga",
+            "Açúcar",
+            "Ovos",
+            "Farinha de trigo",
+            "Sorvete de creme",
+            "Calda de chocolate",
+          ],
         },
         {
-          name: "Casquinha de Mista",
-          description: "Casquinha de sorvete sabor baunilha e chocolate.",
-          ingredients: [],
-          price: 2.9,
-          imageUrl:
-            "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
+          name: "Petit Gateau",
+          description:
+            "Bolo de chocolate com recheio cremoso, servido quente com sorvete de creme.",
+          price: 21.0,
+          imageUrl: "https://i.ibb.co/JWPJqQWN/Petit-Gateau.webp",
           menuCategoryId: desertsCategory.id,
           restaurantId: restaurant.id,
+          ingredients: [
+            "Chocolate meio amargo",
+            "Manteiga",
+            "Ovos",
+            "Açúcar",
+            "Farinha de trigo",
+            "Sorvete de creme",
+          ],
+        },
+        {
+          name: "Cheesecake de Morango",
+          description:
+            "Cheesecake cremoso com base de biscoito, coberto com geleia e morangos frescos.",
+          price: 18.5,
+          imageUrl: "https://i.ibb.co/CpK8HMRY/Cheesecake-de-Morango.png",
+          menuCategoryId: desertsCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Cream cheese",
+            "Biscoito triturado",
+            "Manteiga",
+            "Açúcar",
+            "Geleia de morango",
+            "Morangos frescos",
+          ],
+        },
+        {
+          name: "Sorvete Casquinha",
+          description:
+            "Sorvete cremoso servido em casquinha crocante, disponível em diversos sabores.",
+          price: 9.9,
+          imageUrl: "https://i.ibb.co/8Dq68mSF/Sorvete-Casquinha.png",
+          menuCategoryId: desertsCategory.id,
+          restaurantId: restaurant.id,
+          ingredients: [
+            "Sorvete (baunilha, chocolate ou morango)",
+            "Casquinha de wafer",
+            "Granulado (opcional)",
+          ],
         },
       ],
     });

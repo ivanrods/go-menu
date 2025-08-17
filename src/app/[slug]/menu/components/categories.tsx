@@ -47,6 +47,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
             alt={restaurant.name}
             height={45}
             width={45}
+            className="rounded-lg"
           />
           <div>
             <h2 className="text-lg font-semibold">{restaurant.name}</h2>
@@ -77,10 +78,9 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
       </ScrollArea>
 
       <h3 className="px-5 pt-2 font-semibold">{selectedCategory.name}</h3>
-    
-         <Products products={selectedCategory.products} />
-   
-     
+
+      <Products products={selectedCategory.products} />
+
       {products.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 flex w-full items-center justify-between border-t bg-white px-5 py-3">
           <div>
