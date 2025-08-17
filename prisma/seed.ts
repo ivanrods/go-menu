@@ -30,7 +30,7 @@ const main = async () => {
           description:
             "Hambúrguer bovino suculento com queijo, alface fresca e molho especial. Acompanha batata frita média e refrigerante.",
           price: 29.9,
-          imageUrl: "https://i.ibb.co/LmYYpjj/Combo-Go-Burger-Cl-ssico.png",
+          imageUrl: "https://i.ibb.co/qMRSMsSg/habugue.png",
           menuCategoryId: combosCategory.id,
           restaurantId: restaurant.id,
           ingredients: [
@@ -78,26 +78,6 @@ const main = async () => {
             "Maionese temperada",
             "Batata frita média",
             "Suco natural 300ml",
-          ],
-        },
-        {
-          name: "Combo GoVeggie",
-          description:
-            "Hambúrguer 100% vegetal, queijo vegano, legumes frescos e molho leve. Acompanha batata rústica e chá gelado.",
-          price: 33.9,
-          imageUrl:
-            "https://i.ibb.co/fGSXsvNj/9a24372355c6df8cbc00ef2223a96108.jpg",
-          menuCategoryId: combosCategory.id,
-          restaurantId: restaurant.id,
-          ingredients: [
-            "Pão integral",
-            "Hambúrguer vegetal (grão de bico, ervilha e soja)",
-            "Queijo vegano",
-            "Alface",
-            "Tomate",
-            "Molho de ervas",
-            "Batata rústica",
-            "Chá gelado 300ml",
           ],
         },
         {
@@ -259,24 +239,6 @@ const main = async () => {
           ],
         },
         {
-          name: "GoChicken Crispy",
-          description:
-            "Peito de frango empanado e crocante com queijo, alface e maionese temperada. Acompanha batata frita e refrigerante.",
-          price: 28.9,
-          imageUrl: "https://i.ibb.co/CKQzhKTV/Combo-Go-Chicken-Crispy.png",
-          menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
-          ingredients: [
-            "Pão com gergelim",
-            "Peito de frango empanado",
-            "Queijo prato",
-            "Alface americana",
-            "Molho maionese temperada",
-            "Batata frita média",
-            "Refrigerante lata",
-          ],
-        },
-        {
           name: "GoDouble Burger",
           description:
             "Dois hambúrgueres bovinos suculentos com queijo, cebola caramelizada e molho especial. Acompanha batata frita grande e refrigerante.",
@@ -376,7 +338,7 @@ const main = async () => {
           description:
             "Clássicas batatas fritas crocantes, servidas com ketchup.",
           price: 12.9,
-          imageUrl: "https://i.ibb.co/LDP2P74z/Fritas-Tradicionais.jpg",
+          imageUrl: "https://i.ibb.co/j9yHhqBD/batata-trad.png",
           menuCategoryId: frenchFriesCategory.id,
           restaurantId: restaurant.id,
           ingredients: ["Batata", "Óleo vegetal", "Sal"],
@@ -419,22 +381,6 @@ const main = async () => {
             "Óleo vegetal",
             "Sal",
             "Molho mel e mostarda",
-          ],
-        },
-        {
-          name: "Fritas GoMenu Supreme",
-          description:
-            "Batatas fritas cobertas com queijo, bacon, cebola caramelizada e molho especial.",
-          price: 21.9,
-          imageUrl: "https://i.ibb.co/qMWYr9d7/Fritas-Go-Menu-Supreme.jpg",
-          menuCategoryId: frenchFriesCategory.id,
-          restaurantId: restaurant.id,
-          ingredients: [
-            "Batata",
-            "Queijo prato",
-            "Bacon crocante",
-            "Cebola caramelizada",
-            "Molho especial GoMenu",
           ],
         },
         {
@@ -563,15 +509,6 @@ const main = async () => {
           menuCategoryId: drinksCategory.id,
           restaurantId: restaurant.id,
         },
-        {
-          name: "Milkshake Morango",
-          description: "Milkshake cremoso de morango com chantilly.",
-          ingredients: ["Leite", "Sorvete de morango", "Chantilly"],
-          price: 14.9,
-          imageUrl: "https://i.ibb.co/TBK0bMvS/Milkshake-Morango.png",
-          menuCategoryId: drinksCategory.id,
-          restaurantId: restaurant.id,
-        },
       ],
     });
 
@@ -674,15 +611,7 @@ const main = async () => {
           restaurantId: restaurant.id,
           ingredients: ["Biscoito", "Manteiga", "Creme de limão", "Chantilly"],
         },
-        {
-          name: "Pudim de Leite",
-          description: "Pudim caseiro com calda de caramelo.",
-          price: 12.9,
-          imageUrl: "https://i.ibb.co/JRG2Y9qg/pudin.png",
-          menuCategoryId: desertsCategory.id,
-          restaurantId: restaurant.id,
-          ingredients: ["Leite condensado", "Leite", "Ovos", "Açúcar"],
-        },
+
         {
           name: "Banana Split",
           description: "Banana com bolas de sorvete, chantilly e cobertura.",

@@ -14,15 +14,14 @@ const Products = ({ products }: ProductsProps) => {
   const searchParams = useSearchParams();
   const consumptionMethod = searchParams.get("consumptionMethod");
   return (
-    <div className="space-y-3 px-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center md:space-y-0">
+    <div className="grid items-center gap-4 space-y-3 px-5 md:grid-cols-2 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (
         <Link
           key={product.id}
           href={`/${slug}/menu/${product.id}?consumptionMethod=${consumptionMethod}`}
-          className="flex items-center justify-between gap-10 md:gap-2 border-b py-3 md:flex-col-reverse "
+          className="flex items-center justify-between gap-10 border-b py-3 md:flex-col-reverse md:gap-2"
         >
-          {/* ESQUERDA */}
-          <div>
+          <div className="w-full">
             <h3 className="text-sm font-medium">{product.name}</h3>
             <p className="line-clamp-2 text-sm text-muted-foreground">
               {product.description}
@@ -33,13 +32,12 @@ const Products = ({ products }: ProductsProps) => {
           </div>
 
           {/* DIREITA */}
-          <div className="relative min-h-[82px] min-w-[120px] md:bg-gray-100 md:w-full md:min-h-72">
+          <div className="relative min-h-[82px] min-w-[120px] rounded-t-xl md:min-h-72 md:w-full md:bg-gray-100">
             <Image
               src={product.imageUrl}
               alt={product.name}
               fill
-             
-              className="rounded-lg object-contain "
+              className="object-contain md:p-2"
             />
           </div>
         </Link>
