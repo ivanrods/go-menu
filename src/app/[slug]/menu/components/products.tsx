@@ -23,7 +23,7 @@ const Products = ({ products }: ProductsProps) => {
         >
           <div className="w-full">
             <h3 className="text-sm font-medium">{product.name}</h3>
-            <p className="line-clamp-2 text-sm text-muted-foreground">
+            <p className="line-clamp-2 text-sm text-muted-foreground md:h-10">
               {product.description}
             </p>
             <p className="pt-3 text-sm font-semibold">
