@@ -31,6 +31,7 @@ const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
         alt={restaurant.name}
         fill
         className="object-cover"
+        priority
       />
       <Button
         variant="secondary"

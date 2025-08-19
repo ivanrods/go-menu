@@ -37,6 +37,7 @@ const Products = ({ products }: ProductsProps) => {
               src={product.imageUrl}
               alt={product.name}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-contain md:p-2"
             />
           </div>
