@@ -94,65 +94,70 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerTrigger asChild></DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Finalizar Pedido</DrawerTitle>
-          <DrawerDescription>
-            Insira suas informações abaixo para finalizar o seu pedido.
-          </DrawerDescription>
-        </DrawerHeader>
-        <div className="p-5">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Seu nome</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Digite seu nome..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="cpf"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Seu CPF</FormLabel>
-                    <FormControl>
-                      <PatternFormat
-                        placeholder="Digite seu CPF..."
-                        format="###.###.###-##"
-                        customInput={Input}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+        <div className="mx-auto w-full max-w-md">
+          <DrawerHeader>
+            <DrawerTitle>Finalizar Pedido</DrawerTitle>
+            <DrawerDescription>
+              Insira suas informações abaixo para finalizar o seu pedido.
+            </DrawerDescription>
+          </DrawerHeader>
+          <div className="p-5">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Seu nome</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Digite seu nome..." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="cpf"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Seu CPF</FormLabel>
+                      <FormControl>
+                        <PatternFormat
+                          placeholder="Digite seu CPF..."
+                          format="###.###.###-##"
+                          customInput={Input}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <DrawerFooter>
-                <Button
-                  type="submit"
-                  variant="destructive"
-                  className="rounded-full"
-                  disabled={isPending}
-                >
-                  {isPending && <Loader2Icon className="animate-spin" />}
-                  Finalizar
-                </Button>
-                <DrawerClose asChild>
-                  <Button className="w-full rounded-full" variant="outline">
-                    Cancelar
+                <DrawerFooter>
+                  <Button
+                    type="submit"
+                    variant="destructive"
+                    className="rounded-full"
+                    disabled={isPending}
+                  >
+                    {isPending && <Loader2Icon className="animate-spin" />}
+                    Finalizar
                   </Button>
-                </DrawerClose>
-              </DrawerFooter>
-            </form>
-          </Form>
+                  <DrawerClose asChild>
+                    <Button className="w-full rounded-full" variant="outline">
+                      Cancelar
+                    </Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </form>
+            </Form>
+          </div>
         </div>
       </DrawerContent>
     </Drawer>
