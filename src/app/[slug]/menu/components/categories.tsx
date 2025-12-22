@@ -39,8 +39,8 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
     return selectedCategory.id === category.id ? "default" : "secondary";
   };
   return (
-    <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white lg:px-10 xl:px-20 xl:py-10">
-      <div className="p-5">
+    <div className="relative z-50 mt-[-1.5rem] rounded-t-3xl bg-white">
+      <div className="mx-auto max-w-7xl p-5">
         <div className="flex items-center gap-3">
           <Image
             src={restaurant.avatarImageUrl}
@@ -60,7 +60,7 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
         </div>
       </div>
 
-      <ScrollArea className="w-full">
+      <ScrollArea className="mx-auto w-full max-w-7xl">
         <div className="flex w-max space-x-4 p-4 pt-0">
           {restaurant.menuCategories.map((category) => (
             <Button
@@ -77,7 +77,9 @@ const RestaurantCategories = ({ restaurant }: RestaurantCategoriesProps) => {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
 
-      <h3 className="px-5 pt-2 font-semibold">{selectedCategory.name}</h3>
+      <h3 className="mx-auto max-w-7xl px-5 pt-2 font-semibold">
+        {selectedCategory.name}
+      </h3>
 
       <Products products={selectedCategory.products} />
 

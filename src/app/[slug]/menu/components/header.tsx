@@ -26,13 +26,27 @@ const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
       >
         <ChevronLeftIcon />
       </Button>
-      <Image
-        src={restaurant.coverImageUrl}
-        alt={restaurant.name}
-        fill
-        className="object-cover"
-        priority
-      />
+
+      <div className="relative h-full overflow-hidden">
+        <Image
+          src={restaurant.coverImageUrl}
+          alt={restaurant.name}
+          fill
+          className="scale-105 object-cover"
+          priority
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
+          <h1 className="text-4xl font-bold md:text-6xl">{restaurant.name}</h1>
+          <p className="md:text-md text-sm">
+            Restaurante virtual, explorare cardápios, escolha produtos e
+            adicione à sacola
+          </p>
+        </div>
+      </div>
+
       <Button
         variant="secondary"
         size="icon"

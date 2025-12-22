@@ -14,7 +14,7 @@ const Products = ({ products }: ProductsProps) => {
   const searchParams = useSearchParams();
   const consumptionMethod = searchParams.get("consumptionMethod");
   return (
-    <div className="grid items-center gap-4 space-y-3 px-5 md:grid-cols-2 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="mx-auto grid max-w-7xl items-center gap-4 space-y-3 px-5 md:grid-cols-2 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (
         <Link
           key={product.id}
@@ -32,13 +32,13 @@ const Products = ({ products }: ProductsProps) => {
           </div>
 
           {/* DIREITA */}
-          <div className="relative min-h-[82px] min-w-[120px] rounded-t-xl md:min-h-72 md:w-full md:bg-gray-100">
+          <div className="relative min-h-[82px] min-w-[120px] rounded-t-xl md:min-h-56 md:w-full md:bg-gray-100">
             <Image
               src={product.imageUrl}
               alt={product.name}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain md:p-2"
+              className="object-contain md:p-4"
             />
           </div>
         </Link>
