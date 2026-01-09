@@ -17,7 +17,7 @@ const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
   const handleBackClick = () => router.back();
   const handleOrdersClick = () => router.push(`/${slug}/orders`);
   return (
-    <div className="relative h-[250px] w-full md:h-[350px] lg:h-[400px]">
+    <div className="relative h-64 w-full md:h-80 lg:h-96">
       <Button
         variant="secondary"
         size="icon"
@@ -40,7 +40,7 @@ const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
           <h1 className="text-4xl font-bold md:text-6xl">{restaurant.name}</h1>
-          <p className="md:text-md text-sm">
+          <p className="text-sm md:text-lg">
             Restaurante virtual, explorare cardápios, escolha produtos e
             adicione à sacola
           </p>
